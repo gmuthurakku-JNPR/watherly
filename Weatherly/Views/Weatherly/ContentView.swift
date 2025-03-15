@@ -19,7 +19,9 @@ struct ContentView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         ForEach(viewModel.forecasts.dropFirst()) { forecast in
-                            ForecastCardView(weather: forecast)
+                            NavigationLink(destination: LoginView()) {
+                                ForecastCardView(weather: forecast)
+                            }
                         }
                     }
                     .padding()
